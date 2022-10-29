@@ -1,0 +1,210 @@
+@import "variables";
+
+@mixin body_content {
+  background-color: $page-colors;
+  margin: 0;
+  top: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+@mixin block_content{
+  min-height: 100vh;
+  max-width: 1500px;
+  font-family: $write-styles;
+  --gap: 30px;
+  --num-cols: 3;
+  --row-height: 550px;
+  padding: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+  position: absolute;
+  object-fit: cover;
+  .box1es {
+    border-radius: 25px;
+    width: 410px;
+    height: 540px;
+    position: relative;
+    background: linear-gradient(
+                    to bottom,
+                    $text-background 0%,
+                    $text-background 65%,
+                    $footer-testemonial 65%,
+                    $footer-testemonial 100%,
+    );
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    overflow: hidden;
+    max-width: 100%;
+    p{
+      color: $text-color;
+      font-size: 20px;
+      line-height: 38px;
+      margin: 0;
+    }
+  }
+  .box1-body{
+    padding: 40px 40px 80px;
+  }
+  .box1-footer {
+    color: $text-background;
+    text-align: center;
+    img {
+      border-radius: 50%;
+      border: 5px solid $text-background;
+      height: 120px;
+      width: 120px;
+      margin-top: -75px;
+    }
+    h3 {
+      margin: 10px 0;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    h4 {
+      color: $footer_coll;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+  }
+  .colorsr{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    left: 30%;
+  }
+  .colorsr button{
+    opacity: 0;
+    font-size: 20px;
+    line-height: 50px;
+    appearance: none;
+    background-color: #000000;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: $text-background;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-weight: 600;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+  }
+  .colorsr button:disabled {
+    pointer-events: none;
+  }
+
+  .colorsr button:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+
+  .colorsr button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  .box1es:hover{
+    position: relative;
+    background: $text-color center;
+    h3{
+      display: none;
+    }
+    h4{
+      display: none;
+    }
+    img{
+      display: none;
+    }
+    .colorsr button{
+      opacity: 1;
+      transition: all 1000ms ease-in-out;
+    }
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+  }
+}
+
+@mixin media_icons{
+  position: fixed;
+  top: 50%;
+  left: calc(100% - 60px);
+  list-style-type: none;
+  padding: 0;
+  transform: translateY(-50%);
+  min-width: 250px;
+  .follow_ups {
+    align-items: center;
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  .follow_ups:hover {
+    transform: translateX(calc(-100% + 60px));
+  }
+  .follow_ups i {
+    color: $text-background;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+    width: 60px;
+  }
+  .follow_ups a {
+    color: $text-background;
+    padding: 0 10px;
+  }
+  .follow_ups.blog {
+    background-color: $backgrounds1;
+  }
+  .follow_ups.facebook {
+    background-color: $backgrounds2;
+  }
+  .follow_ups.twitter {
+    background-color: $backgrounds3;
+  }
+  .follow_ups.github {
+    background-color: $backgrounds4;
+  }
+  .follow_ups.linkedin {
+    background-color: $backgrounds5;
+  }
+  .fa-laptop-code:before {
+    content: $blog_str;
+  }
+  .fa-twitter:before {
+    content: $twitter_str;
+  }
+  .fa-linkedin-in:before {
+    content: $linkedin_str;
+  }
+  .fa-facebook-f:before {
+    content: $facebook_str;
+  }
+  .fa-github:before {
+    content: $github_str;
+  }
+}
+
+@mixin fa_1{
+  font-family: $write-styles;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: $fa_default_height;
+}

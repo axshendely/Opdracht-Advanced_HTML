@@ -1,0 +1,40 @@
+@import "css_subs/variables";
+@import "css_subs/mixins";
+
+body {
+  @include body_content
+}
+.box1 {
+  width: 300px;
+  height: 105px;
+  position: absolute;
+  @include block_content
+}
+
+.media-container {
+  @include media_icons
+}
+
+.fab .fas{
+    @include fa_1
+}
+
+@media only screen and (min-width: 841px) {
+  .box1{
+    --num-cols: 3;
+    --row-height: auto;
+  }
+}
+
+@media only screen and (min-width: 541px) and (max-width: 840px) {
+  .box1{
+    --num-cols: 2;
+    --row-height: auto;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .box1{
+    --num-cols: 1;
+    --row-height: auto;
+  }
+}
